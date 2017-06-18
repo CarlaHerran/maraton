@@ -22,3 +22,7 @@ class Card
 	end
 end
 
+#p Deck.new("maraton.csv", "maraton1")
+
+
+
