@@ -2,6 +2,8 @@ require "csv"
 
 class Deck
 
+	attr_reader :cards, :title
+
 	def initialize(file, title)
 		@title = title
 		@cards = parse_csv(file)
@@ -16,6 +18,9 @@ class Deck
 end
 
 class Card
+
+	attr_reader :answer, :question
+
 	def initialize(question, answer)
 		@question = question
 		@answer = answer
