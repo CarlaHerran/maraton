@@ -4,13 +4,14 @@ require_relative 'vista.rb'
 class Maraton
 
 	def initialize
-		@deck = Deck.new("maraton.csv", "maraton")
 		@view = View.new
 		start_game
 	end
 
 	def start_game
-		@view.bienvenida
+		categories = ['maraton','math','music','history']
+		index = @view.bienvenida(categories)		
+		@deck = Deck.new(categories[index] + '.csv')
 		answers = @deck.cards.map do |card|
 			answer = @view.show_question(card)
 			card.answer == answer

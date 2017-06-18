@@ -1,8 +1,11 @@
 class View
 
-	def bienvenida
-		puts "Bienvenido!, presiona enter para empezar"
-		gets.chomp
+	def bienvenida(categories)
+		puts "Bienvenido!, Escoge una categoría y presiona enter para empezar"
+	  categories.each_with_index do |category, index| 
+			puts "#{index}- #{category}"
+		end
+		gets.to_i
 	end
 		
 
